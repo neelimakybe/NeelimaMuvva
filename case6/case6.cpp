@@ -12,9 +12,11 @@ class Student{
 	int *iRollno;
 	char cName[20];
 	public:
+	//constructor of student class
 		Student(){
 			cout<<"Called Constructor";
 		}
+	//parameterised constructor of student class 
 		Student(int *ino,char *cname){
 			cout<<"Called Constructor";
 			iRollno=ino;
@@ -24,6 +26,7 @@ class Student{
 			iRollno=ino;
 			strcpy(cName,cname);
 		}
+	//display function
 		void display(){
 			cout<<"RollNo "<<*iRollno<<endl;
 			cout<<"Name"<<cName;
@@ -38,6 +41,7 @@ class Student{
        {
        Student obj;
        int val=30;
+	       //passing values through object
        Student obj2(&val,"hello");
     char cname[20]="NewStudent";
 	obj.assignValue(&val,cname);
