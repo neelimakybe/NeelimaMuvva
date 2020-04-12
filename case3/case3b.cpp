@@ -16,8 +16,8 @@ int in;
 	//default constructor
  	storage()
 	{
-		im=78;
-		in=45;
+		im=50;
+		in=70;
 	}
 };
 /*function name:externstorage
@@ -28,7 +28,7 @@ void externstorage()
 {
 extern int iex;
 	cout<<"the default value of extern variable:"<<iex<<endl;
-	iex=67;
+	iex=87;
 	cout<<"the modified value of exatern variable:"<<iex<<endl;
 }
 /*function name:registerstorage
@@ -40,7 +40,7 @@ void staticstorage()
  static int sib;
  
  cout<<"default value static storage class:"<<sib<<endl;
- static int sis=6; /*local static varaible*/	
+ static int sis=3; /*local static varaible*/	
  sis++;
  cout<<"enter the static value:";
  cout<<"the value local static variable:"<<sis<<endl;
@@ -74,7 +74,7 @@ autostorage()
 int main(int argc,char **argv)
 {
 const storage y;  //declaration of object for class storage
-y.im=678; 	  //accessing mutable storage class value
+y.im=567; 	  //accessing mutable storage class value
       if(argc == 2 && strcmp(argv[1], "-h")==0) //help command 
 	{
 		
