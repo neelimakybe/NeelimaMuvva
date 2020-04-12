@@ -6,18 +6,18 @@ date:09-04-2020
 #include<iostream>
 #include<string.h>
 using namespace std;
-static int sig=10; /*gobal variable*/
-int iEx;
+static int sig=25; /*gobal variable*/
+int iex;
 class storage
 {
 public:
-mutable int iM;		//mutable variable
-int iN;
+mutable int im;		//mutable variable
+int in;
 	//default constructor
  	storage()
 	{
-		iM=78;
-		iN=45;
+		im=78;
+		in=45;
 	}
 };
 /*function name:externstorage
@@ -26,10 +26,10 @@ return type:void
 //function definition externstorage
 void externstorage()
 {
-extern int iEx;
-	cout<<"the default value of extern variable:"<<iEx<<endl;
-	iEx=9;
-	cout<<"the modified value of exatern variable:"<<iEx<<endl;
+extern int iex;
+	cout<<"the default value of extern variable:"<<iex<<endl;
+	iex=67;
+	cout<<"the modified value of exatern variable:"<<iex<<endl;
 }
 /*function name:registerstorage
 return type:void
@@ -52,11 +52,11 @@ return type:void
 //function definition for registor storage
 void registerstorage()
 {
- register int iR;
- cout<<"default value register storage class:"<<iR<<endl;
+ register int ir;
+ cout<<"default value register storage class:"<<ir<<endl;
  cout<<"enter registar value"<<endl;
- cin>>iR;
- cout<<"the value of register variable:"<<iR<<endl;
+ cin>>ir;
+ cout<<"the value of register variable:"<<ir<<endl;
 }
 /*function name:autostorage
 return type:void
@@ -65,16 +65,16 @@ return type:void
 void 
 autostorage()
 {
-	 int iA;	//declaring auto storage class variable
- cout<<"default value auto storage class:"<<iA<<endl;
+	 int ia;	//declaring auto storage class variable
+ cout<<"default value auto storage class:"<<ia<<endl;
   cout<<"enter auto variable"<<endl;
-  cin>>iA;
-  cout<<"the value of auto avariable:"<<iA<<endl;
+  cin>>ia;
+  cout<<"the value of auto avariable:"<<ia<<endl;
 }
 int main(int argc,char **argv)
 {
-const storage x;  //declaration of object for class storage
-x.iM=678; 	  //accessing mutable storage class value
+const storage y;  //declaration of object for class storage
+y.im=678; 	  //accessing mutable storage class value
       if(argc == 2 && strcmp(argv[1], "-h")==0) //help command 
 	{
 		
@@ -88,6 +88,6 @@ x.iM=678; 	  //accessing mutable storage class value
 	staticstorage();	//calling staticstorage function
 	staticstorage();	//calling staticstorage function
 	externstorage();	//calling externstorage function
-	cout<<"the value of mutable is:"<<x.iM<<endl;//dispalying mutable value.
+	cout<<"the value of mutable is:"<<y.im<<endl;//dispalying mutable value.
 	}
 }	
