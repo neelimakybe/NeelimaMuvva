@@ -4,6 +4,7 @@ File Name:case5b2.cpp
 Date:11-04-2020
 */
 #include<iostream>
+#include<string.h>
 using namespace std;
 class car
 {
@@ -57,7 +58,7 @@ public:
 	cout<<"audi class constructor"<<endl;
 	}
 	//Parameterised constructor
-	bus(int inumofseats)
+	audi(int inumofseats)
 	{
 	cout<<"audi parrametrise constructor"<<endl;
 	this->inumofseats=inumofseats;
