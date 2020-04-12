@@ -5,67 +5,67 @@ Date:11-04-2020
 */
 #include<iostream>
 using namespace std;
-class vehicle
+class car
 {
-int iNoofwheels;
+int inumofwheels;
 public:
 	//consructor of vehicle class
-	vehicle()
-	{
-	cout<<"vehicle class constructor"<<endl;
-	}
-	//parameterised  constructor of class 
-	vehicle(int ix)
-	{
-	cout<<"Inparametrised vehicle constructor"<<endl;
-	iNoofwheels=ix;
-	}
-	//Desturctor of vehicle class
-	~vehicle()
-	{
-	cout<<"vehicle class destructor"<<endl;
-	}
-};
-class car:public vehicle
-{
-string iName;
-public:
-//constructor of car class
 	car()
 	{
 	cout<<"car class constructor"<<endl;
 	}
-	//parameterised constructor of car class
-	car(string iName)
+	//parameterised  constructor of class 
+	car(int ix)
 	{
-	cout<<"In car class parametrised constructor"<<endl;
-	this->iName=iName;
+	cout<<"Inparametrised car constructor"<<endl;
+	inumofwheels=ix;
 	}
-	//Destructor of car class
+	//Desturctor of car class
 	~car()
 	{
 	cout<<"car class destructor"<<endl;
 	}
 };
-class bus:public vehicle
+class bmw:public car
 {
-int iNoofseats;
+string iName;
 public:
-	//constructor of bus class
-	bus()
+//constructor of bmw class
+	bmw()
 	{
-	cout<<"bus class constructor"<<endl;
+	cout<<"bmw class constructor"<<endl;
+	}
+	//parameterised constructor of bmw class
+	bmw(string iName)
+	{
+	cout<<"In bmw class parametrised constructor"<<endl;
+	this->iName=iName;
+	}
+	//Destructor of bmw class
+	~bmw()
+	{
+	cout<<"bmw class destructor"<<endl;
+	}
+};
+class audi:public car
+{
+int inumofseats;
+public:
+	//constructor of audi class
+	audi()
+	{
+	cout<<"audi class constructor"<<endl;
 	}
 	//Parameterised constructor
-	bus(int iNoofseats)
+	bus(int inumofseats)
 	{
-	cout<<"bus parrametrise constructor"<<endl;
-	this->iNoofseats=iNoofseats;
+	cout<<"audi parrametrise constructor"<<endl;
+	this->inumofseats=inumofseats;
 	}
-	//destructor of bus class
-	~bus()
+	//destructor of audi class
+	~audi()
 	{
-	cout<<"Bus destructor"<<endl;
+	cout<<"Audi destructor"<<endl;
 	}
 };
 int main(int argc,char **argv)
@@ -77,11 +77,11 @@ int main(int argc,char **argv)
 	}
 	else
 	{
-	vehicle vl(4);
-	car cl("nano");
-	car c2;
-	bus bl(20);
-	bus b2;
+	car vl(4);
+	bmw cl("nano");
+	bmw c2;
+	audi bl(20);
+	audi b2;
 	}
 }
 	
