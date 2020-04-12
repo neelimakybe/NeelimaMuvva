@@ -12,6 +12,7 @@ Date:08-04-2020
 */
 
 #include<iostream> 
+#include<string.h>
 
 using namespace std;
 
