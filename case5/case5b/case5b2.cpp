@@ -70,9 +70,9 @@ public:
 };
 int main(int argc,char **argv)
 {
-    if(argc==2)
-	{
-	cout<<"usage: ./a.out"<<endl;
+   if(argc == 2 && strcmp(argv[1], "--help")==0)
+   {
+	
 	cout<<"This program gives description of orderof constructor and destructors execution"<<endl;
 	}
 	else
