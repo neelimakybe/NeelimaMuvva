@@ -35,10 +35,10 @@ int main(int argc,char*argv[])
 
 int iM;
 
-if(argc==2)
-
-cout<<"usage:./a.out arg1"<<endl;
-
+   if(argc == 2 && strcmp(argv[1], "--help")==0)
+   {
+cout<<"Main purpose of this program is to give the size and type of the given value"<<endl;
+   }
 else
 
 {
