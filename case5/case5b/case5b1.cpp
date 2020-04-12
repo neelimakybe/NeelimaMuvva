@@ -5,6 +5,7 @@ File Name:case5b1.cpp
 Date:11-04-2020
 */
 #include<iostream>
+#include<string.h>
 using namespace std;
 class car
 {
