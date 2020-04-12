@@ -9,15 +9,18 @@ class vehicle
 {
 int iNoofwheels;
 public:
+	//consructor of vehicle class
 	vehicle()
 	{
 	cout<<"vehicle class constructor"<<endl;
 	}
+	//parameterised  constructor of class 
 	vehicle(int ix)
 	{
 	cout<<"Inparametrised vehicle constructor"<<endl;
 	iNoofwheels=ix;
 	}
+	//Desturctor of vehicle class
 	~vehicle()
 	{
 	cout<<"vehicle class destructor"<<endl;
@@ -27,15 +30,18 @@ class car:public vehicle
 {
 string iName;
 public:
+//constructor of car class
 	car()
 	{
 	cout<<"car class constructor"<<endl;
 	}
+	//parameterised constructor of car class
 	car(string iName)
 	{
 	cout<<"In car class parametrised constructor"<<endl;
 	this->iName=iName;
 	}
+	//Destructor of car class
 	~car()
 	{
 	cout<<"car class destructor"<<endl;
@@ -45,15 +51,18 @@ class bus:public vehicle
 {
 int iNoofseats;
 public:
+	//constructor of bus class
 	bus()
 	{
 	cout<<"bus class constructor"<<endl;
 	}
+	//Parameterised constructor
 	bus(int iNoofseats)
 	{
 	cout<<"bus parrametrise constructor"<<endl;
 	this->iNoofseats=iNoofseats;
 	}
+	//destructor of bus class
 	~bus()
 	{
 	cout<<"Bus destructor"<<endl;
