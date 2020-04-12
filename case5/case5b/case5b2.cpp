@@ -79,9 +79,9 @@ int main(int argc,char **argv)
 	else
 	{
 	car vl(4);
-	bmw cl("nano");
+	bmw cl("i20");
 	bmw c2;
-	audi bl(20);
+	audi bl(5);
 	audi b2;
 	}
 }
