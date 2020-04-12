@@ -4,6 +4,7 @@ filename:case3b.cpp
 date:09-04-2020
 */
 #include<iostream>
+#include<string.h>
 using namespace std;
 static int sig=10; /*gobal variable*/
 int iEx;
