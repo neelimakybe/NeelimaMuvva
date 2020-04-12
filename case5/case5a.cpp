@@ -4,6 +4,7 @@ Filename:case5a.cpp
 Date:09-04-2020
 */
 #include <iostream>
+#include<string.h>
 using namespace std;
 class Circle
 {
