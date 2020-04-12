@@ -8,6 +8,7 @@ Date:10-04-2020
 #include<iostream>
 
 #include<stdlib.h>
+#include<string.h>
 
 using namespace std;
 
