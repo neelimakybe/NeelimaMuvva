@@ -74,10 +74,9 @@ int main(int argc,char **argv)
 {
 const storage x;  //declaration of object for class storage
 x.iM=678; 	  //accessing mutable storage class value
-  if(argc==2)
+      if(argc == 2 && strcmp(argv[1], "-h")==0) //help command 
 	{
-		cout<<"Usage:"<<endl;
-		cout<<"./program.exe"<<endl;
+		
 		cout<<"This program gives understanding about all storage classes"<<endl;
 	}
 	else
