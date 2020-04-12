@@ -42,9 +42,9 @@ int addFive(Distance d)
 }
 int main(int argc,char **argv)
 {
-          if(argc==2)
+             if(argc == 2 && strcmp(argv[1], "--help")==0)
           {
-         cout<<"usage: ./case5a.exe"<<endl;
+         
          cout<<"This program gives description of initializing private data members in different ways i.e.,Scope resolution operator,indirect initialisation and friend function"<<endl;
           }
          else
