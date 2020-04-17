@@ -4,19 +4,10 @@
  
  
 
-filename: case7.cpp 
-
- 
-
-details: Program to perform filehandling in 'notes.ini' file 
-
- 
-
-author: J.P.Prakash 
-
- 
-
-date: 10/04/2020 
+Program Name:This program is used to add,edit and display the configurations in "notes.ini" file.
+Author Name:Neelima Muvva
+File Name:case7.cpp
+Date:15/04/20 
 
  
 
@@ -920,7 +911,7 @@ if(argc==2)
 
  
 
-if(strcmp(argv[1],"-h")==0)     //created a help command 
+    if(argc == 2 && strcmp(argv[1], "-h")==0) //help command 
 
  
 
