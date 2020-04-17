@@ -16,7 +16,7 @@ using namespace std;
 
 
 
-int square(int iW)
+void square(int iW)
 
 {
 
