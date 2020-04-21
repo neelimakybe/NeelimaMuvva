@@ -11,19 +11,19 @@ Date:19-04-2020
 
 using namespace std;
 
-class config{
-    char Key[1000];
-    char Kittype[1000];
-    char Notesprogram[1000];
-    char Installtype[1000];
-    char partitionnumber[1000];
-    char showControllerstatuswindow[1000];
-    char servicename[1000];
-    char FaultRecovery_Build[1000];
-    char TimeZone[1000];
-    char DST[1000];
-    char DSTLAW[1000];
-    char FileDlgDirectory[1000];
+class Fileconfig{
+    char Key[50];
+    char Kittype[50];
+    char Notesprogram[50];
+    char Installtype[50];
+    char partitionnumber[50];
+    char showControllerstatuswindow[50];
+    char servicename[50];
+    char FaultRecovery_Build[50];
+    char TimeZone[50];
+    char DST[50];
+    char DSTLAW[50];
+    char FileDlgDirectory[50];
 public:
 
 
@@ -33,7 +33,7 @@ public:
     {
         cout<<"Enter key:";
         getchar();
-        cin.get(Key,1000,'\n');
+        cin.get(Key,50,'\n');
     }
 
 
@@ -41,68 +41,68 @@ public:
     {
         cout<<"Enter Kittype";
         getchar();
-        cin.get(Kittype,1000,'\n');
+        cin.get(Kittype,50,'\n');
     }
     void setNotesprogram()
     {
         cout<<"Enter Notesprogram";
         getchar();
-        cin.get(Notesprogram,1000,'\n');
+        cin.get(Notesprogram,50,'\n');
     }
     void setInstalltype()
     {
         cout<<"Enter Installtype";
         getchar();
-        cin.get(Installtype,1000,'\n');
+        cin.get(Installtype,50,'\n');
     }
     void setpartitionnumber()
     {
         cout<<"Enter partitionnumber";
         getchar();
-        cin.get(partitionnumber,1000,'\n');
+        cin.get(partitionnumber,50,'\n');
     }
     void setshowControllerstatuswindow()
     {
         cout<<"Enter showControllerstatuswindow";
         getchar();
-        cin.get(showControllerstatuswindow,1000,'\n');
+        cin.get(showControllerstatuswindow,50,'\n');
     }
     void setservicename()
     {
         cout<<"Enter servicename";
         getchar();
-        cin.get(servicename,1000,'\n');
+        cin.get(servicename,50,'\n');
     }
     
     void setFaultRecovery_Build()
     {
         cout<<"Enter FaultRecovery_Build";
         getchar();
-        cin.get(FaultRecovery_Build,1000,'\n');
+        cin.get(FaultRecovery_Build,50,'\n');
     }
     void setTimeZone()
     {
         cout<<"Enter TimeZone";
         getchar();
-        cin.get(TimeZone,1000,'\n');
+        cin.get(TimeZone,50,'\n');
     }
     void setDST()
     {
         cout<<"Enter DST";
         getchar();
-        cin.get(DST,1000,'\n');
+        cin.get(DST,50,'\n');
     }
     void setDSTLAW()
     {
         cout<<"Enter DSTLAW";
         getchar();
-        cin.get(DSTLAW,1000,'\n');
+        cin.get(DSTLAW,50,'\n');
     }
     void setFileDlgDirectory()
     {
         cout<<"Enter FileDlgDirectory";
         getchar();
-        cin.get(FileDlgDirectory,1000,'\n');
+        cin.get(FileDlgDirectory,50,'\n');
         
     }
 
@@ -171,7 +171,7 @@ public:
 
 void removefile()
 {
-    config c;
+    Fileconfig c;
     int Count;
     ifstream infile("notes.ini",ios::in);
     while(1)
@@ -192,25 +192,25 @@ void removefile()
 
 //This function is to  search the data and modify the changes if needed.
 
-int searchupdateconfig(vector<config> &std,char* option)
+int searchupdateconfig(vector<Fileconfig> &vec,char* option)
 {
-    config c;
-    vector<config>:: iterator Itr;
+   Fileconfig c;
+    vector<Fileconfig>:: iterator it;
     ofstream outfile("notes.ini",ios::trunc|ios::out);
-    for(Itr=std.begin();Itr!=std.end();Itr++)
+    for(it=vec.begin();it!=vec.end();it++)
     {
-        c=*Itr;
+        c=*it;
         if(strcmp(c.putkey(),option)==0)
         {
             //the value is been deleted
-            std.erase(Itr);
+            vec.erase(it);
             cout<<"Enter kittype to update"<<endl;
             c.setKittype();
             //the new value is pushed into file
-            std.push_back(c);
-    for(Itr=std.begin();Itr!=std.end();Itr++)
+            vec.push_back(c);
+    for(it=vec.begin();it!=vec.end();it++)
     {
-        c=*Itr;
+        c=*it;
             outfile<<"key="<<c.putkey()<<"\nKittype="<<c.putKittype()<<"\nNotesprogram="<<c.putNotesprogram()<<"\nInstalltype="<<c.putInstalltype()<<"\npartitionnumber="<<c.putpartitionnumber()<<"\nshowControllerstatuswindow="<<c.putshowControllerstatuswindow()<<"\nservicename="<<c.putservicename()<<"\nFaultRecovery_Build="<<c.putFaultRecovery_Build()<<"\nTimeZone="<<c.putTimeZone()<<"\nDST="<<c.putDST()<<"\nDSTLAW="<<c.putDSTLAW()<<"\nFileDlgDirectory="<<c.putFileDlgDirectory()<<"\n";
         //the file again written with updated values
     }
@@ -221,16 +221,16 @@ int searchupdateconfig(vector<config> &std,char* option)
 }
 //This function is to add data in to the file using vector.
 
-void addconfig(vector<config> &std)
+void addconfig(vector<Fileconfig> &vec)
 {
-    config c;
-    vector<config>:: iterator Itr;
-    char option='y';
-    while(option=='y' || option=='Y')
+    Fileconfig c;
+    vector<Fileconfig>:: iterator it;
+    char choice='y';
+    while(choice=='y' || choice=='Y')
     {
         ofstream outfile("notes.ini",ios::trunc|ios::out);
         c.setkey();
-        if(searchupdateconfig(std,c.putkey())==1)
+        if(searchupdateconfig(vec,c.putkey())==1)
             //checking for if the key is already present in the file or not
             cout<<"updated"<<endl;
         else
@@ -247,41 +247,42 @@ void addconfig(vector<config> &std)
             c.setDST();
             c.setDSTLAW();
             c.setFileDlgDirectory();
-            std.push_back(c);
-            for(Itr=std.begin();Itr!=std.end();Itr++)
+            vec.push_back(c);
+            for(it=vec.begin();it!=vec.end();it++)
             {
-                c=*Itr;
+                c=*it;
                 
             outfile<<"key="<<c.putkey()<<"\nKittype="<<c.putKittype()<<"\nNotesprogram="<<c.putNotesprogram()<<"\nInstalltype="<<c.putInstalltype()<<"\npartitionnumber="<<c.putpartitionnumber()<<"\nshowControllerstatuswindow="<<c.putshowControllerstatuswindow()<<"\nservicename="<<c.putservicename()<<"\nFaultRecovery_Build="<<c.putFaultRecovery_Build()<<"\nTimeZone="<<c.putTimeZone()<<"\nDST="<<c.putDST()<<"\nDSTLAW="<<c.putDSTLAW()<<"\nFileDlgDirectory="<<c.putFileDlgDirectory()<<"\n";
             }
        }
         cout<<"Do you want to append configaration datta(y/n)?";
-        cin>>option;
+        cin>>choice;
         outfile.close();
     }
 }
 
 //This funcgtion is to delete the data in file.
-void deleteconfig(vector<config> &std)
+void deleteconfig(vector<Fileconfig> &vec)
 {
-   char ckey[1000];
-    config cn;
-    vector<config>:: iterator it;
+   char ckey[50];
+    Fileconfig cn;
+    vector<Fileconfig>:: iterator it;
     ofstream outfile("notes.ini",ios::trunc|ios::out);
     cout<<"Enter the key to delete:";
     getchar();
-    cin.get(ckey,1000,'\n');
-    for(it=std.begin();it!=std.end();it++)
+    cin.get(ckey,50,'\n');
+    for(it=vec.begin();it!=vec.end();it++)
     {
         	cn=*it;
         if((strcmp(cn.putkey(),ckey)==0))
         {
-            std.erase(it);
+            vec.erase(it);
             cout<<"Deleted"<<endl;
+            break;
         }
     }
    removefile();
-    for(it=std.begin();it!=std.end();it++)
+    for(it=vec.begin();it!=vec.end();it++)
 	{
             cn=*it;
             outfile<<"key="<<cn.putkey()<<"\nKittype="<<cn.putKittype()<<"\nNotesprogram="<<cn.putNotesprogram()<<"\nInstalltype="<<cn.putInstalltype()<<"\npartitionnumber="<<cn.putpartitionnumber()<<"\nshowControllerstatuswindow="<<cn.putshowControllerstatuswindow()<<"\nservicename="<<cn.putservicename()<<"\nFaultRecovery_Build="<<cn.putFaultRecovery_Build()<<"\nTimeZone="<<cn.putTimeZone()<<"\nDST="<<cn.putDST()<<"\nDSTLAW="<<cn.putDSTLAW()<<"\nFileDlgDirectory="<<cn.putFileDlgDirectory()<<"\n";
@@ -294,7 +295,7 @@ void deleteconfig(vector<config> &std)
 
 void displayconfig()
 {
-    config cg;
+    Fileconfig cg;
     ifstream infile("notes.ini",ios::in);
     char info[1000];
     while(!infile.eof())
@@ -316,20 +317,20 @@ int main(int argc,char* argv[])
     }
     else
     {
-        vector<config> std;
-        vector<config>:: iterator Itr;
-        char Opt;
+        vector<Fileconfig> vec;
+        vector<Fileconfig>:: iterator it;
+        char ch;
         while(1)
         {
             cout<<"Select your option:"<<endl<<" 1.add"<<endl<<" 2.delete"<<endl<<" 3.display"<<endl<<" 4.exit"<<endl;
-            cin>>Opt;
-            switch(Opt)
+            cin>>ch;
+            switch(ch)
             {
                 case '1':
-                        addconfig(std);
+                        addconfig(vec);
                         break;
                 case '2':
-                        deleteconfig(std);
+                        deleteconfig(vec);
                         break;
                 case '3':
                         displayconfig();
