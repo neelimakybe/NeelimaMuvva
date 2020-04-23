@@ -49,18 +49,19 @@ public:
 int
 main (int argc, char *argv[])
 {
-  if (argc == 2)
-    {
+ 
       //if loop for comparing the input string with "-h"      
-      if (strcmp (argv[1], "-h") == 0)
-	{
+      if(argc == 2 && strcmp(argv[1], "--help")==0)
+        {
+
+	
 	  cout << "USAGE" << endl;
 	  cout <<
 	    " This program uses integer pointer,character array and describes them usingconstructor/destructor/operator overloading and member function"
 	    << endl;
 
 	}
-    }
+    
   else
     {
       //calling parameterized constructor
