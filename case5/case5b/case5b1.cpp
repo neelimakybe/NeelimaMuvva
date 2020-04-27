@@ -1,9 +1,3 @@
-
-/*Program Name:This program defines the order of execution of constructor and destructor using virtual
-Author Name:Neelima Muvva
-File Name:case5b1.cpp
-Date:11-04-2020
-*/
 #include<iostream>
 #include<string.h>
 using namespace std;
@@ -21,7 +15,7 @@ public:
 	cout<<"car destructor invoked"<<endl;
 	}
 };
-class bmw:protected car
+class bmw:public car
 {
 	public:
 	bmw()
@@ -45,7 +39,8 @@ int main(int argc,char  **argv)
     else
 	{
 	    //Invoking constructors and virtual destructors creating pointers to the objects.
-	car *c=new car();
 	bmw *b=new bmw();
+	car *c=b;
+	delete c;
 	}
 }
