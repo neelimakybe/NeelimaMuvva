@@ -5,6 +5,7 @@ File Name:matrix.cpp
 Author Name:Neelima Muvva
 Date:14-05-2020
 */
+#include<string.h>
 #include<iostream>
 using namespace std;
 void getarray(char a[10][10],int noofrows,int noofcolumns);
@@ -201,7 +202,7 @@ Parameters:Two dimensional array,row count,column count and check variable.
 Usage of function:It process the left diagonal of a matrix and moves the repeated elemnts ana placest
 Author Name:Neelima Muvva
 */
-leftdiagonal(char a[10][10],int noofrows,int noofcolumns,int check)
+int leftdiagonal(char a[10][10],int noofrows,int noofcolumns,int check)
 {
     int temp=a[0][0];
     int indexofrow,indexofcolumn,count;
